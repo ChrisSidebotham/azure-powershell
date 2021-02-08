@@ -14,7 +14,7 @@ Creates an Azure resource group.
 ## SYNTAX
 
 ```
-New-AzResourceGroup [-Name] <String> [-Location] <String> [-Tag <Hashtable>] [-Force] [-ApiVersion <String>]
+New-AzResourceGroup [-ResourceGroupName] <String> [-Location] <String> [-Tag <Hashtable>] [-Force] [-ApiVersion <String>]
  [-Pre] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -31,7 +31,7 @@ Azure resource group is a collection of Azure resources that are deployed as a u
 
 ### Example 1: Create an empty resource group
 ```
-PS> New-AzResourceGroup -Name RG01 -Location "South Central US"
+PS> New-AzResourceGroup -ResourceGroupName RG01 -Location "South Central US"
 ```
 
 This command creates a resource group that has no resources. You can use the
@@ -47,7 +47,7 @@ This command creates a resource group that has no resources.
 
 ### Example 3: Create a resource group with tags
 ```
-PS> New-AzResourceGroup -Name RG01 -Location "South Central US" -Tag @{Empty=$null; Department="Marketing"}
+PS> New-AzResourceGroup -ResourceGroupName RG01 -Location "South Central US" -Tag @{Empty=$null; Department="Marketing"}
 ```
 
 This command creates an empty resource group. This command is the same as the command in Example 1,
@@ -123,7 +123,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name
+### -ResourceGroupName
 Specifies a name for the resource group. The resource name must be unique in the subscription. If a
 resource group that has that name already exists, the command prompts you for confirmation before
 replacing the existing resource group.
